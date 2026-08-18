@@ -28,11 +28,11 @@ export const site = {
 
   // Hero pool — one is picked at random on every fresh page load.
   heroImages: [
-    "/images/hero/hero-01.jpg",
-    "/images/hero/hero-02.jpg",
+    "/images/hero/hero-01.jpeg",
+    "/images/hero/hero-02.jpeg",
   ],
 
-  aboutPortrait: "/images/hero/hero-02.jpg",
+  aboutPortrait: "/images/hero/3.jpeg",
 };
 
 const isPlaceholder = (v) => !v || v.startsWith("YOUR_");
