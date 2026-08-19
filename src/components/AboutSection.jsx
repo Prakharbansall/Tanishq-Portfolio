@@ -1,9 +1,29 @@
+import { useEffect, useState } from "react";
 import Reveal from "@/components/Reveal";
 import { site } from "@/config/site";
 import { genres } from "@/data/genres";
 
+const aboutImages = [site.aboutPortrait, ...site.heroImages];
+
 export default function AboutSection({ as: Heading = "h1", className = "pb-20 pt-28 sm:pt-32" }) {
   const Sub = Heading === "h1" ? "h2" : "h3";
+  const [image, setImage] = useState(aboutImages[0]);
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    if (aboutImages.length < 2) return undefined;
+
+    const interval = window.setInterval(() => {
+      setLoaded(false);
+      setImage((currentImage) => {
+        const currentIndex = aboutImages.indexOf(currentImage);
+        const nextIndex = (currentIndex + 1) % aboutImages.length;
+        return aboutImages[nextIndex];
+      });
+    }, 4500);
+
+    return () => window.clearInterval(interval);
+  }, [aboutImages]);
 
   return (
     <section id="about" className={`scroll-mt-24 ${className}`}>
@@ -50,13 +70,15 @@ export default function AboutSection({ as: Heading = "h1", className = "pb-20 pt
 
         <Reveal delay={120}>
           <img
-            src={site.aboutPortrait}
+            key={image}
+            src={image}
             alt={`${site.name} photographing on location`}
             width={1024}
             height={1280}
             loading="lazy"
             decoding="async"
-            className="h-full max-h-[720px] w-full rounded-md border border-border object-cover"
+            onLoad={() => setLoaded(true)}
+            className={`hero-image-in h-full max-h-[720px] w-full rounded-md border border-border object-cover transition-opacity duration-700 ${loaded ? "opacity-100" : "opacity-0"}`}
           />
         </Reveal>
       </div>

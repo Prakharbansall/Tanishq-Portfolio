@@ -58,7 +58,7 @@ function Home() {
 
 
 
-      <section className="border-t border-border bg-secondary py-16 sm:py-20">
+      <section className="border-t border-border/70 bg-secondary/45 py-16 backdrop-blur-sm sm:py-20">
         <div className="mx-auto flex max-w-[1500px] flex-wrap items-end justify-between gap-8 px-6 sm:px-10 lg:px-24">
           <Reveal>
             <p className="text-[11px] font-semibold tracking-[0.24em] text-primary">

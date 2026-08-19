@@ -4,7 +4,7 @@ import Reveal from "./Reveal";
 
 export default function GenreSection() {
   return (
-    <section id="genres" className="bg-background py-16 sm:py-20 lg:py-24">
+    <section id="genres" className="py-16 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-[1500px] px-6 sm:px-10 lg:px-24">
         <Reveal className="text-center">
           <p className="text-[11px] font-semibold tracking-[0.24em] text-primary">

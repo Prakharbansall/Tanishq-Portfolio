@@ -13,6 +13,7 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SiteBackground from "@/components/SiteBackground";
 import SocialRail from "@/components/SocialRail";
 import PrivacyNotice from "@/components/PrivacyNotice";
 import VisitorTracker from "@/components/VisitorTracker";
@@ -131,9 +132,10 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
+      <SiteBackground />
       <Header />
       <SocialRail />
-      <main>
+      <main className="relative">
         {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
         <Outlet />
       </main>

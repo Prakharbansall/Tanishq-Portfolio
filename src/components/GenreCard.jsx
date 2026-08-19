@@ -8,7 +8,7 @@ export default function GenreCard({ genre }) {
     <Link
       to="/work/$slug"
       params={{ slug: genre.slug }}
-      className="card-lift group block overflow-hidden rounded-md border border-border bg-card shadow-[0_10px_30px_-24px_rgba(0,0,0,0.55)]"
+      className="card-lift group block overflow-hidden rounded-md border border-border/80 bg-card/85 shadow-[0_10px_30px_-24px_rgba(0,0,0,0.55)] backdrop-blur-sm"
       aria-label={`${genre.name} photography gallery`}
     >
       <div className="aspect-[16/11] overflow-hidden bg-muted sm:aspect-[16/10]">
@@ -23,7 +23,7 @@ export default function GenreCard({ genre }) {
         />
       </div>
 
-      <div className="flex items-center gap-3 bg-card px-4 py-4">
+      <div className="flex items-center gap-3 bg-card/90 px-4 py-4 backdrop-blur-sm">
         <span className="flex size-11 shrink-0 items-center justify-center rounded-sm border border-border text-primary transition-transform duration-300 group-hover:-translate-y-0.5">
           <Icon className="size-5" strokeWidth={1.7} />
         </span>

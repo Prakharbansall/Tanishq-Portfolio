@@ -30,9 +30,12 @@ export const site = {
   heroImages: [
     "/images/hero/hero-01.jpeg",
     "/images/hero/hero-02.jpeg",
+    "/images/hero/13.jpg",
+    "/images/hero/chota.jpeg",
+    "/images/hero/bada.jpeg",
   ],
 
-  aboutPortrait: "/images/hero/3.jpeg",
+  aboutPortrait: "/images/hero/13.jpg",
 };
 
 const isPlaceholder = (v) => !v || v.startsWith("YOUR_");

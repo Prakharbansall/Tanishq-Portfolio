@@ -12,6 +12,19 @@ export default function Hero() {
 
   useEffect(() => {
     setImage(randomHeroImage());
+
+    if (site.heroImages.length < 2) return undefined;
+
+    const interval = window.setInterval(() => {
+      setLoaded(false);
+      setImage((currentImage) => {
+        const currentIndex = site.heroImages.indexOf(currentImage);
+        const nextIndex = (currentIndex + 1) % site.heroImages.length;
+        return site.heroImages[nextIndex];
+      });
+    }, 4500);
+
+    return () => window.clearInterval(interval);
   }, []);
 
   const scrollTo = (id) => {
@@ -21,7 +34,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative overflow-hidden border-b border-border/70 bg-gradient-to-b from-[oklch(0.985_0.012_85)] to-[oklch(0.97_0.014_78)]">
+    <section className="relative overflow-hidden border-b border-border/70 bg-gradient-to-b from-background/90 via-background/75 to-transparent">
       <div className="mx-auto grid max-w-[1500px] grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] items-center gap-5 px-6 pb-14 pt-28 sm:gap-8 sm:px-10 sm:pt-32 lg:grid-cols-[1fr_1.05fr] lg:gap-6 lg:pb-0 lg:pl-24 lg:pr-0 lg:pt-36">
         <div className="min-w-0 max-w-xl">
           <p className="rise text-[10px] font-semibold tracking-[0.2em] text-foreground/80 sm:text-[12px] sm:tracking-[0.28em]" style={{ animationDelay: "80ms" }}>
@@ -77,7 +90,7 @@ export default function Hero() {
             onLoad={() => setLoaded(true)}
             className={`hero-image-in size-full object-cover object-[50%_22%] transition-opacity duration-700 ${loaded ? "opacity-100" : "opacity-0"}`}
           />
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[oklch(0.985_0.012_85)] via-transparent to-transparent lg:from-[oklch(0.985_0.012_85)]/80" />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-background/85 via-transparent to-transparent lg:from-background/70" />
         </div>
       </div>
     </section>

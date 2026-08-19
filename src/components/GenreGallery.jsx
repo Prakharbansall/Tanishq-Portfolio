@@ -18,7 +18,7 @@ export default function GenreGallery({ genre }) {
   );
 
   return (
-    <div className="bg-background pb-20 pt-28 sm:pt-32">
+    <div className="pb-20 pt-28 sm:pt-32">
       <div className="mx-auto max-w-[1500px] px-6 sm:px-10 lg:px-24">
         <Link
           to="/work"
