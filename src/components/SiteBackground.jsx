@@ -81,8 +81,8 @@ function TempleArch({ className = "" }) {
 export default function SiteBackground() {
   return (
     <div className="site-ambient pointer-events-none fixed inset-0 -z-10 overflow-hidden" aria-hidden="true">
-      {/* Gradient wash ~50% */}
-      <div className="absolute inset-0 opacity-50">
+      {/* Gradient wash ~20% */}
+      <div className="absolute inset-0 opacity-20">
         <div className="absolute inset-0 bg-gradient-to-br from-background via-[color-mix(in_oklab,var(--primary)_32%,var(--background))] to-[color-mix(in_oklab,var(--primary)_42%,var(--background))]" />
 
         <div className="absolute -right-[10%] -top-[6%] h-[min(78vw,620px)] w-[min(78vw,620px)] rounded-full bg-primary/45 blur-[90px]" />
@@ -96,8 +96,8 @@ export default function SiteBackground() {
         <div className="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-[color-mix(in_oklab,var(--primary)_28%,transparent)] to-transparent" />
       </div>
 
-      {/* Indian-style motifs ~20% */}
-      <div className="absolute inset-0 text-primary opacity-20">
+      {/* Indian-style motifs ~10% */}
+      <div className="absolute inset-0 text-primary opacity-10">
         <div className="site-jaali-pattern absolute inset-0" />
 
         <MandalaCorner className="absolute -left-20 -top-20 size-[min(42vw,280px)] sm:-left-12 sm:-top-12 sm:size-64" />
