@@ -34,9 +34,9 @@ const automobilePhotos = photosFor("automobile", [
 ]);
 
 const celebEventsPhotos = photosFor("celeb-events", [
-  "1.jpeg", "2.jpeg", "3.jpeg", "4.jpg", "5.jpg", "6.jpg", "7.jpeg", "8.jpg",
+  "22.jpg","23.jpg","24.jpg","25.jpg","26.jpg","27.jpg","28.jpg" ,"1.jpeg", "2.jpeg", "3.jpeg", "4.jpg", "5.jpg", "6.jpg", "7.jpeg", "8.jpg",
   "9.jpg", "10.jpg", "11.jpg", "12.jpg", "13.jpg", "14.jpg", "15.jpg", "16.JPG",
-  "17.JPG", "18.JPG", "19.JPG", "20.jpg", "21.jpg","22.jpg","23.jpg","24.jpg","25.jpg","26.jpg","27.jpg","28.jpg"
+  "17.JPG", "18.JPG", "19.JPG", "20.jpg", "21.jpg"
 ]);
 
 const fashionPhotos = photosFor("fashion", [
