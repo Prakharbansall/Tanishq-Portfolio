@@ -19,7 +19,7 @@ const concertPhotos = photosFor("concert", [
 ]);
 
 const cafePhotos = photosFor("cafe", [
-  "1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "8.jpg", "9.jpg",
+  "_DSC7574.jpg","_DSC7575.jpg","_DSC7581.jpg","_DSC7585.jpg","_DSC7591.jpg","_DSC7614.jpg","1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "8.jpg", "9.jpg",
   "10.jpg", "11.jpg", "12.jpg", "13.jpg" , "14.jpg", "15.jpg", "16.jpg" , "17.jpg" , "18.jpg" , "19.jpg"
 ]);
 
@@ -29,11 +29,12 @@ const jewelleryPhotos = photosFor("jewellery", [
 ]);
 
 const automobilePhotos = photosFor("automobile", [
-  "1.jpg", "2.JPG", "3.JPG", "4.JPG", "5.jpg", "6.jpg", "7.JPG", "8.jpg",
+  "BMW Drift at Sunset.jpg.jpeg","Cinematic Drift Chase at Dusk.png","DSC07343.jpg.jpeg","DSC07515.jpg.jpeg","DSC07561.jpg.jpeg","Golden Drift on the Motorsport Track (2).jpg.jpeg","Neon Drift Beneath the Red Bull Arch.jpg.jpeg","Neon Drift_ Crisp Sedan in Motion.png","Thermal Drift Lines at Motorsport Night.png","_DSC0171_1.jpg.jpeg","_DSC0169.jpg.jpeg","_DSC7308 (1).jpg.jpeg","_DSC7349.jpg.jpeg","_DSC7362 (2).jpg.jpeg","1.jpg","_DSC7365 (2).jpg.jpeg","_DSC7442.jpg.jpeg","1.jpg", "2.JPG", "3.JPG", "4.JPG", "5.jpg", "6.jpg", "7.JPG", "8.jpg",
   "9.JPG", "10.JPG", "11.JPG", "12.JPG", "13.JPG",
 ]);
 
 const celebEventsPhotos = photosFor("celeb-events", [
+  "_DSC0536 (1).jpg.jpeg","_DSC0552.jpg.jpeg","_DSC0556.jpg.jpeg","_DSC0568.jpg.jpeg","_DSC0578.jpg.jpeg","_DSC0595.jpg.jpeg",
   "22.jpg","23.jpg","24.jpg","25.jpg","26.jpg","27.jpg","28.jpg" ,"1.jpeg", "2.jpeg", "3.jpeg", "4.jpg", "5.jpg", "6.jpg", "7.jpeg", "8.jpg",
   "9.jpg", "10.jpg", "11.jpg", "12.jpg", "13.jpg", "14.jpg", "15.jpg", "16.JPG",
   "17.JPG", "18.JPG", "19.JPG", "20.jpg", "21.jpg"
@@ -46,7 +47,7 @@ const fashionPhotos = photosFor("fashion", [
 ]);
 
 const streetPhotos = photosFor("street", [
-  "1.jpeg", "2.jpeg", "3.JPG", "4.jpeg", "5.jpeg", "6.jpeg", "7.jpeg", "8.jpeg",
+  "1 (1).jpg.jpeg","_DSC0480 (1) (2).jpg.jpeg","_DSC0488.jpg.jpeg","_DSC0498.jpg.jpeg","1.jpeg", "2.jpeg", "3.JPG", "4.jpeg", "5.jpeg", "6.jpeg", "7.jpeg", "8.jpeg",
   "9.jpeg", "10.jpeg", "11.jpeg", "12.jpeg", "13.jpg", "street-01.jpg",
 ]);
 
