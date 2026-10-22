@@ -5,9 +5,12 @@ export default function LoadingImage({
   alt,
   className = "",
   containerClassName = "",
+  minLoadingMs = 1000,
   ...props
 }) {
   const imageRef = useRef(null);
+  const timerRef = useRef(null);
+  const loadingStartedAt = useRef(Date.now());
   const [status, setStatus] = useState({ src, loaded: false, failed: false });
   const isCurrentImage = status.src === src;
   const hasFailed = isCurrentImage && status.failed;
@@ -15,10 +18,33 @@ export default function LoadingImage({
 
   useEffect(() => {
     const image = imageRef.current;
-    if (image?.complete && image.naturalWidth > 0) {
-      setStatus({ src, loaded: true, failed: false });
+    loadingStartedAt.current = Date.now();
+    let settled = false;
+
+    const finishLoading = (failed = false) => {
+      if (settled) return;
+      settled = true;
+      const remaining = Math.max(0, minLoadingMs - (Date.now() - loadingStartedAt.current));
+      timerRef.current = setTimeout(() => setStatus({ src, loaded: true, failed }), remaining);
+    };
+
+    const handleLoad = () => finishLoading();
+    const handleError = () => finishLoading(true);
+
+    image?.addEventListener("load", handleLoad);
+    image?.addEventListener("error", handleError);
+
+    if (image?.complete) {
+      if (image.naturalWidth > 0) handleLoad();
+      else if (image.currentSrc) handleError();
     }
-  }, [src]);
+
+    return () => {
+      image?.removeEventListener("load", handleLoad);
+      image?.removeEventListener("error", handleError);
+      clearTimeout(timerRef.current);
+    };
+  }, [src, minLoadingMs]);
 
   return (
     <div className={`relative isolate overflow-hidden bg-muted ${containerClassName}`}>
@@ -27,8 +53,6 @@ export default function LoadingImage({
         ref={imageRef}
         src={src}
         alt={alt}
-        onLoad={() => setStatus({ src, loaded: true, failed: false })}
-        onError={() => setStatus({ src, loaded: true, failed: true })}
         className={`${className} transition-[opacity,transform] ${isLoaded ? "opacity-100" : "opacity-0"}`}
       />
       {!isLoaded && (
