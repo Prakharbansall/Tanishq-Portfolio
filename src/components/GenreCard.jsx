@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { genreIcon } from "./genreIcons";
+import LoadingImage from "./LoadingImage";
 
 export default function GenreCard({ genre }) {
   const Icon = genreIcon(genre.icon);
@@ -11,14 +12,15 @@ export default function GenreCard({ genre }) {
       className="card-lift group block overflow-hidden rounded-md border border-border/80 bg-card/85 shadow-[0_10px_30px_-24px_rgba(0,0,0,0.55)] backdrop-blur-sm"
       aria-label={`${genre.name} photography gallery`}
     >
-      <div className="aspect-[16/11] overflow-hidden bg-muted sm:aspect-[16/10]">
-        <img
+      <div className="aspect-[16/11] sm:aspect-[16/10]">
+        <LoadingImage
           src={genre.cover}
           alt={`${genre.name} photography by Tanishq Sharma`}
           width={1280}
           height={853}
           loading="lazy"
           decoding="async"
+          containerClassName="size-full"
           className="size-full object-cover transition-transform duration-[900ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-110"
         />
       </div>

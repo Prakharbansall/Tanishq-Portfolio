@@ -4,6 +4,7 @@ import { ArrowLeft, Play } from "lucide-react";
 import Lightbox from "./Lightbox";
 import Reveal from "./Reveal";
 import { genreIcon } from "./genreIcons";
+import LoadingImage from "./LoadingImage";
 
 export default function GenreGallery({ genre }) {
   const [openIndex, setOpenIndex] = useState(null);
@@ -48,11 +49,12 @@ export default function GenreGallery({ genre }) {
             onClick={() => setOpenIndex(0)}
             className="group block w-full overflow-hidden rounded-md border border-border"
           >
-            <img
+            <LoadingImage
               src={genre.cover}
               alt={`Featured ${genre.name.toLowerCase()} photograph`}
               width={1280}
               height={853}
+              containerClassName="aspect-[16/10] w-full sm:aspect-[16/9]"
               className="aspect-[16/10] w-full object-cover object-center transition-transform duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105 sm:aspect-[16/9]"
             />
           </button>
@@ -66,13 +68,16 @@ export default function GenreGallery({ genre }) {
                 type="button"
                 onClick={() => setOpenIndex(i)}
                 className="group relative block w-full overflow-hidden rounded-md border border-border bg-muted"
-                aria-label={item.type === "video" ? `Play ${item.title || "video"}` : `Open photo ${i + 1}`}
+                aria-label={
+                  item.type === "video" ? `Play ${item.title || "video"}` : `Open photo ${i + 1}`
+                }
               >
-                <img
+                <LoadingImage
                   src={item.type === "video" ? item.poster : item.src}
                   alt={item.alt || item.title || `${genre.name} photograph ${i + 1}`}
                   loading="lazy"
                   decoding="async"
+                  containerClassName="min-h-40"
                   className="block h-auto w-full transition-transform duration-[900ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
                 />
                 <span className="pointer-events-none absolute inset-0 bg-primary/0 transition-colors duration-500 group-hover:bg-primary/15" />
@@ -87,11 +92,15 @@ export default function GenreGallery({ genre }) {
             </Reveal>
           ))}
         </div>
-
       </div>
 
       {openIndex !== null && (
-        <Lightbox items={items} index={openIndex} onIndex={setOpenIndex} onClose={() => setOpenIndex(null)} />
+        <Lightbox
+          items={items}
+          index={openIndex}
+          onIndex={setOpenIndex}
+          onClose={() => setOpenIndex(null)}
+        />
       )}
     </div>
   );
